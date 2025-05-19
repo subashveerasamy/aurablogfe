@@ -68,17 +68,17 @@ const Register = () => {
   return (
     <div className='d-flex pt-5 flex-column justify-content-center align-items-center' id='registerPage' style={{ width: "100vw", height:"100vh" }}>
       <form className='border border-5 p-5 mb-3' style={{ borderRadius: "25px" }} onSubmit={handleSubmit}>
-        <h1 className='text-light'>Register Page</h1>
+        <h1 className=' '>Register Page</h1>
         <div className='mt-5'>
-          <label className='text-light'>Username:</label>
+          <label className=' '>Username:</label>
           <input className='form-control' type="text" value={username} name='username' onChange={(e) => setUsername(e.target.value)} required />
         </div>
         <div className='mt-4'>
-          <label className='text-light'>Email:</label>
+          <label className=' '>Email:</label>
           <input className='form-control' type="email" value={email} name='email' onChange={(e) => setEmail(e.target.value)} required />
         </div>
         <div className='mt-4'>
-          <label className='text-light'>Password:</label>
+          <label className=' '>Password:</label>
           <input className='form-control' type="password" value={password} name='password' onChange={(e) => setPassword(e.target.value)} required />
           {errors.length && <p className="text-danger">{errors.length}</p>}
           {errors.uppercase && <p className="text-danger">{errors.uppercase}</p>}
@@ -87,7 +87,7 @@ const Register = () => {
           {errors.specialChar && <p className="text-danger">{errors.specialChar}</p>}
         </div>
         <div className='mt-4'>
-          <label className='text-light'>Confirm Password:</label>
+          <label className=' '>Confirm Password:</label>
           <input className='form-control' type="password" value={confirmPassword} name='confirmPassword' onChange={(e) => setConfirmPassword(e.target.value)} required />
         </div>
         <div className="d-flex justify-content-evenly mt-5">

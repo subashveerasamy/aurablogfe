@@ -36,7 +36,7 @@ const Home = () => {
   <div className="card mx-2 ms-2" key={index} style={{ width: "18rem"}}>
     <div style={{ position: "relative", display: "inline-block" }}>
       <img
-        src={item.image ? `https://aurablogbe.onrender.com${item.image}` : "/imageContent.avif"}
+        src={item.image ? `https://aurablogbe.onrender.com/${item.image}` : "/imageContent.avif"}
         alt="Blog Image"
         style={{ width: "18rem", height: "200px", borderRadius: "10px" }}
       />

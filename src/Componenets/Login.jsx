@@ -47,17 +47,17 @@ const Login = () => {
  
     <div className='d-flex flex-column justify-content-center align-items-center' id='loginPage' style={{width:"100vw", height:"100vh"}}>
         <form className='border border-5 p-5' onSubmit={handleSubmit} style={{borderRadius:"25px"}}>
-            <h1 className='text-center text-light'>LOGIN PAGE</h1>
+            <h1 className='text-center'>LOGIN PAGE</h1>
             <div className="emailDiv mt-5">
-                <label className='text-light' >email:</label>
+                <label className=' ' >email:</label>
                 <input className="form-control" type="email" name="email" value={email} onChange={(e)=> setEmail(e.target.value)} required/>
             </div>
             <div className="passwordDiv mt-5">
-                <label className='text-light'>password:</label>
+                <label className=' '>password:</label>
                 <input className="form-control" type="password"  name="password" value={password} onChange={(e)=> setPassword(e.target.value)} required/>
             </div>
             <div className="mt-5 ">
-                <Link className='text-light' to="/resetpassword" >forgot Password?</Link>
+                <Link className=' ' to="/resetpassword" >forgot Password?</Link>
               </div>
             <div className="d-flex justify-content-evenly mt-5">
               
