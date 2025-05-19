@@ -51,7 +51,7 @@ const Register = () => {
   
   const userRegister = async () => {
    try {
-    const response = await axios.post("https://e-commerce-be-828a.onrender.com/user/register", { username, email, password });
+    const response = await axios.post("https://aurablogbe.onrender.com/user/register", { username, email, password });
     
     if (response.data.message === "User registered successfully") {
       navigate("/");

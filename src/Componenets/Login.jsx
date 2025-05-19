@@ -22,11 +22,12 @@ const Login = () => {
     const loginUser=async()=>{
       try {
      
-        const response=await axios.post("http://localhost:3000/user/login",{email,password});
+        const response=await axios.post("https://aurablogbe.onrender.com/user/login",{email,password});
         if(response.data.message === "Login successful"){
          
           
          sessionStorage.setItem('token',response.data.token  );
+         sessionStorage.setItem("login","true");
           alert("Login successful");
           navigate("/App");
         }

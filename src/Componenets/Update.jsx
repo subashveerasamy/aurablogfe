@@ -1,15 +1,22 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import SelectedBlogContext from '../Context/SelectedBlog';
+import BlogContext from '../Context/BlogContext';
 
-const Blog = () => {
+const Update = () => {
+    const {selectedBlog, setSelectedBlog}= useContext(SelectedBlogContext);
+    const {blog, setBlog}= useContext(BlogContext);
+    const navigate= useNavigate()
+    
 
     const [formData, setFormData] = useState({
 
-        title:"",
-        category:"",
-        image:null,
-        content:""
+        title:selectedBlog.title,
+        category:selectedBlog.category,
+        image:selectedBlog.image || null,
+        content:selectedBlog.content,
+        id:selectedBlog._id
     })
    
    const handleChange = (e) => {
@@ -31,23 +38,20 @@ if (!formData.title || !formData.category || !formData.content) {
     formDataToSend.append("title", formData.title);
     formDataToSend.append("category", formData.category);
     formDataToSend.append("content", formData.content);
+    formDataToSend.append("id", selectedBlog._id);
     if (formData.image) {
         formDataToSend.append("image", formData.image);
     }
 
     try {
-        const response = await axios.post("https://aurablogbe.onrender.com/blog/upload", formDataToSend,
-            {
-                 
-          headers: {
-            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-          
-        }
-            }
+        console.log(formDataToSend);
+        const response = await axios.put("https://aurablogbe.onrender.com/blog/update", formData
+            
         );
         if(response.data){
-            alert("Blog submitted successfully!");
-            console.log(response.data.filePath)
+            alert("Blog updated successfully!");
+            setBlog(response.data.blog)
+            navigate("/App")
 
         }
         
@@ -55,7 +59,7 @@ if (!formData.title || !formData.category || !formData.content) {
         alert("Failed to submit blog.");
     }
   }
-  const navigate= useNavigate()
+  
 
 
 
@@ -118,4 +122,4 @@ if (!formData.title || !formData.category || !formData.content) {
   )
 }
 
-export default Blog
+export default Update
