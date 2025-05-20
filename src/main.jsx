@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Login from './Componenets/Login.jsx'
 import Register from './Componenets/Register.jsx'
 import Home from './Componenets/Home.jsx'
-import Update from './Componenets/update.jsx'
+import Update from './Componenets/Update.jsx'
 
 const router= createBrowserRouter([
   {
